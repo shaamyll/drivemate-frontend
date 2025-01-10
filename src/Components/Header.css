@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

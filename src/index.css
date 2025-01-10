@@ -1,0 +1,93 @@
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+  
+}
+
+
+
+#userLogin{
+  background-image: url('./Pages//Img/freepik__candid-image-photography-natural-textures-highly-r__60030.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+
+#userRide{
+  background-image: url('./Pages/Img/freepik__candid-image-photography-natural-textures-highly-r__60030.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+
+#userDriver{
+  background-image: url('./Pages/Img/freepik__candid-image-photography-natural-textures-highly-r__60029.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+
+button{
+  color: violet;
+}
+
+
+
+/* SideNav styling */
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #f3f5f7;
+    color: rgb(6, 0, 0);
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+  }
+  
+  .sidenav.closed {
+    width: 60px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 60px;
+  }
+  
+  .nav-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* .nav-item:hover {
+    background-color: #97a4b1;
+  } */
+  
+  .toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: -25px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #3498db;
+  }
+  
+
+  .custom-modal-width .modal-dialog {
+    max-width: 800px; /* Adjust the width as needed */
+  }
+  
+  .custom-modal-width .modal-body {
+    padding: 20px; /* Optional: Customize padding for better appearance */
+  }
