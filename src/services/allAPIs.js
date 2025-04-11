@@ -1,6 +1,14 @@
 import { commonAPI } from "../services/commonAPI"
 import { serverUrl } from "../services/serverUrl"
 
+export const sendOtp = async(reqBody)=>{
+    return await commonAPI('post',`${serverUrl}/api/sendOtp`,reqBody,"")
+}
+
+export const verifyOtp = async(reqBody)=>{
+    return await commonAPI('post',`${serverUrl}/api/verifyOtp`,reqBody,"")
+}
+
 export const registerAPI = async(reqBody)=>{
     return await commonAPI('post',`${serverUrl}/api/register`,reqBody,"")
 }

@@ -3,7 +3,7 @@
 *{
     padding: 0px;
     margin: 0px;
-  
+
 }
 
 
@@ -26,9 +26,6 @@
   background-size: cover;
 }
 
-button{
-  color: violet;
-}
 
 
 
@@ -39,8 +36,8 @@ button{
     left: 0;
     height: 100%;
     width: 200px;
-    background-color: #f3f5f7;
-    color: rgb(6, 0, 0);
+    background-color: #141414;
+    color: white;
     transition: width 0.3s ease;
     overflow-x: hidden;
   }

@@ -4,7 +4,7 @@ import logo from '../Pages/Img/logo.jpg';
 
 function Footer() {
   return (
-    <MDBFooter style={{fontFamily:"poppins,serif", backgroundSize:"cover", color:"black"}} className='text-center text-lg-start '>
+    <MDBFooter style={{fontFamily:"poppins,serif", backgroundSize:"cover", color:"white", backgroundColor:"#141414"}} className='text-center text-lg-start '>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
           <span>Get connected with us on social networks:</span> 

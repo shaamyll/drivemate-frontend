@@ -31,72 +31,79 @@ function Header() {
   }, []);
 
   return (
-    <div id="nav">
-      <MDBNavbar expand="lg" light style={{ backgroundColor: 'white', margin: '0px', padding: '0px', height: '70px' }}>
-        <MDBContainer fluid>
-          <MDBNavbarBrand className="ms-2" style={{ paddingRight: '380px' }} href="#">
-            <img src={logo} style={{ width: '25px', height: '25px' }} alt="" />
-            <span className="mt-3">
-              <p style={{ fontWeight: '600' }} className="fs-5">
-                DRIVE-MATE
-              </p>
-            </span>
+    <div id="nav" >
+      <MDBNavbar expand="lg" light style={{ backgroundColor: 'white', padding: '0px', height: '70px' }}>
+        <MDBContainer fluid >
+          <MDBNavbarBrand className="col-7 ms-2 d-flex align-items-center">
+            <img src={logo} className='mt-1' style={{ width: '20px', height: '20px' }} alt="" />
+            <span className=" mt-1 fw-bold fs-5">DRIVE-MATE</span>
           </MDBNavbarBrand>
 
           <MDBNavbarToggler
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onClick={() => setOpenBasic(!openBasic)}
+            onClick={() => setOpenBasic(!openBasic)}  
           >
             <MDBIcon icon="bars" fas />
           </MDBNavbarToggler>
 
-          <MDBCollapse navbar open={openBasic}>
-            <MDBNavbarNav className="mr-auto mb-2 mb-lg-0 ">
+          <MDBCollapse navbar open={openBasic} className='container-fluid' style={{backgroundColor:"white"}}>
+            {
+              hasDriverId ? (""):
+              (
+                <MDBNavbarNav className="w-100 d-flex flex-column flex-lg-row justify-content-lg-center align-items-lg-center text-center">
               <Link to={'/'}>
-                <MDBNavbarItem className="me-5 mt-3 " style={{ color: 'black' }}>
-                  Home
-                </MDBNavbarItem>
+                <MDBNavbarItem className="me-lg-5 mt- text-black">Home</MDBNavbarItem>
               </Link>
 
-              <Link to={'/'}>
-                <MDBNavbarItem className="me-5 mt-3 " style={{ color: 'black' }}>
-                  Services
-                </MDBNavbarItem>
+              {
+                username ? (
+                  <Link to={'/userDashboard'}>
+                <MDBNavbarItem className="me-lg-3 mt- text-black">Dashboard</MDBNavbarItem>
               </Link>
+                ):(
+                  <Link to={'/services'}>
+                <MDBNavbarItem className="me-lg-5 mt- text-black">Services</MDBNavbarItem>
+              </Link>
+                )
+              }
 
               {username ? (
-                <Link to={'/requestDriver'} style={{ color: 'black' }}>
-                  <MDBNavbarItem className="me-5 mt-3">Bookings</MDBNavbarItem>
+                <Link to={'/requestDriver'} className="text-black">
+                  <MDBNavbarItem className="me-lg-5 mt-">Bookings</MDBNavbarItem>
                 </Link>
               ) : (
-                <Link to={'/about'} style={{ color: 'black' }}>
-                  <MDBNavbarItem className="me-5 mt-3">About</MDBNavbarItem>
+                <Link to={'/about'} className="text-black">
+                  <MDBNavbarItem className="me-lg-5 mt">About</MDBNavbarItem>
                 </Link>
               )}
 
-              <MDBNavbarItem style={{ marginLeft: '280px' }} className="me-5 ">
-                {username ? (
-                  <button
-                    onClick={handleLogOut}
-                    className="btn btn-outline-danger rounded shadow mt-2"
-                    style={{ height: '35px', width: '100px' }}
-                  >
-                    LOGOUT
-                  </button>
-                ) : !hasDriverId ? (
-                  <Link to={'/rideordrive'}>
+              <div className="mt-3 mt-lg-0 ms-lg-auto text-center">
+                <MDBNavbarItem>
+                  {username ? (
                     <button
-                      className="btn btn-outline-primary rounded shadow mb-2 mt-2"
-                      style={{ height: '35px', width: '100px' }}
+                      onClick={handleLogOut}
+                      className="btn btn-dark rounded shadow fw-bolder"
+                      style={{ height: '35px', width: '100px', color: "orange" }}
                     >
-                      LOGIN
+                      LOGOUT
                     </button>
-                  </Link>
-                ) : null}
-              </MDBNavbarItem>
+                  ) : !hasDriverId ? (
+                    <Link to={'/rideordrive'}>
+                      <button
+                        className="btn btn-dark shadow"
+                        style={{ height: '35px', width: '100px' }}
+                      >
+                        LOGIN
+                      </button>
+                    </Link>
+                  ) : null}
+                </MDBNavbarItem>
+              </div>
             </MDBNavbarNav>
+              )
+            }
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>

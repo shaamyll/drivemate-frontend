@@ -28,7 +28,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="d-flex">
+    <div className="d-flex" style={{minHeight:"100vh", height:"100%"}}>
      
 
      <Card
@@ -36,10 +36,10 @@ const Sidebar = () => {
           style={{
             width: "250px", 
             backgroundColor: "#343a40", 
-            padding: "20px", 
-            height: "800px", 
+            padding: "20px",
             color: "black", 
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+  
           }}
         >
           <div className="mb-2">

@@ -4,7 +4,11 @@ import SideBar from '../Components/SideBar'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { acceptBookingAPI, getAllBookingsInDriverAPI } from '../services/allAPIs';
-
+import Swal from 'sweetalert2'
+import { ImLocation2 } from "react-icons/im";
+import { IoTimer } from "react-icons/io5";
+import { FaCar } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 function DriverDashboard() {
 
@@ -57,8 +61,11 @@ console.log(allUserBookings);
     try {
       const response = await acceptBookingAPI(bookingId, reqBody);
       if (response.status == 200) {
-        alert('Booking accepted successfully!');
-
+        Swal.fire({
+          title: "Booking accepted successfully!",
+          icon: "success",
+          draggable: true
+        });
       
 
         getAllBookingsInDriver(); // Refresh the bookings list
@@ -133,20 +140,22 @@ console.log(allUserBookings);
   return (
     <>
       <Header />
-      <div style={{ paddingTop: "82px" }} className="d-flex">
+      <div style={{ paddingTop: "82px", backgroundColor:"#141414", color:"black" }} className="row ">
+
+<div className="col-4 col-md-2">
+  
+<SideBar />
+
+</div>
 
 
-        <SideBar />
-
-
-
-        <div className='w-100  '  >
+        <div className=' col-8 col-md-6 mb-5'  >
           {/* <h3 className='mt-3 ml-3'>Welcome {fullname}</h3><br /> */}
 
-          <h4 className='ms-4 mt-4 fw-bold'>New Bookings:</h4>
+          <h4 className='ms-4 mt-4 fw-bold text-light'>New Bookings:</h4>
 
 
-          <div className="col-12 container col-md-6 " >
+          <div className="container  col-12 col-md-8 " >
 
 
           {
@@ -163,11 +172,17 @@ console.log(allUserBookings);
                       <span style={{ float: "right" }}>City: {bookings.city}</span>
                     </Card.Header>
                     <Card.Body>
+                    <Card.Title>Time : {bookings.driverNeeded} </Card.Title>
                       <Card.Title>username: {bookings.username}</Card.Title>
-                      <Card.Title>userId: {bookings.userId}</Card.Title>
-                      <Card.Title>PickUp Location: {bookings.pickupLocation}</Card.Title>
-                      <Card.Title>Destination Location: {bookings.destinationLocation}</Card.Title>
-                      <Card.Title>Time to Reach: {bookings.driverNeeded} </Card.Title>
+                      {/* <Card.Title>Phoneno: {bookings.email}</Card.Title> */}
+                      <Card.Title><ImLocation2 /> 
+                      PickUp Location: {bookings.pickupLocation}</Card.Title>
+                      <div className='col-2'>
+                      <img src="https://img.freepik.com/premium-vector/route-vector-icon-route-destination-with-map-pin-doted-line-vector-illustration-eps-10_532800-355.jpg" alt="" style={{width:"100%"}} />
+                      </div>
+                      <Card.Title><ImLocation2 /> 
+                      Destination Location: {bookings.destinationLocation}</Card.Title>
+  
 
                       {bookings.date && bookings.time && (
                         <div>
@@ -176,8 +191,8 @@ console.log(allUserBookings);
                         </div>
                       )}
 
-                      <Card.Title>Package Hours: {bookings.packageHours}</Card.Title>
-                      <Card.Title>Car Type: {bookings.carType}, {bookings.carModel}</Card.Title>
+                      <Card.Title><IoTimer /> Package Hours: {bookings.packageHours} hrs</Card.Title>
+                      <Card.Title><FaCar /> Car Type: {bookings.carType}, {bookings.carModel}</Card.Title>
 
                       {/* Display Amount */}
                       <Card.Title className='fw-bold'>Amount: ₹{amount}</Card.Title>

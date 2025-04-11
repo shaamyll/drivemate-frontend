@@ -4,6 +4,7 @@ import Sidebar from '../Components/SideBar'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { completeBookingAPI, getCurrentBookingsByDriverAPI } from '../services/allAPIs';
+import Swal from 'sweetalert2'
 
 function DriverBookings() {
 
@@ -57,10 +58,15 @@ function DriverBookings() {
                 )
             );
 
-            alert(response.data.message)
-            // setCurrentBookings(response.data)
+            Swal.fire({
+                title: response.data.message,
+                icon: "success",
+                draggable: true
+              });
             console.log(currentBookings);
-            location.reload()
+            setTimeout(()=>{
+                location.reload()
+            },2000)
 
         } catch (error) {
             console.error('Error completing booking:', error);
@@ -114,15 +120,16 @@ function DriverBookings() {
     return (
         <>
             <Header />
-            <div className='row' style={{ paddingTop: "80px" }}>
-                <div className="col-2">
+            <div className='row' style={{ paddingTop: "60px", backgroundColor:"#141414", color:"white"}}>
+                <div className="col-4 col-md-2">
                     <Sidebar />
 
-                </div>
-                <div className="col-6" >
+                </div >
+
+                <div className="col-8 col-md-6" >
                     <center>
                         <h3 className='mt-4'>Bookings</h3>
-                        <div className='w-75  mt-4'>
+                        <div className='  mt-4'>
 
 
 
@@ -133,17 +140,22 @@ function DriverBookings() {
                                     const acceptedAtFormatted = formatAcceptedAt(booking.driverDetails.acceptedAt);
 
                                     return (
-                                        <div>
+                                        <div style={{color:"white"}}>
                                             Accepted At:  {acceptedAtFormatted }
                                             <Card className='mt-4 mb-4' key={booking._id}
                                             style={{
+                                                color:"black",
                                                 opacity: ['Completed', 'Cancelled'].includes(booking.status) ? 0.6 : 1,
                                                 // pointerEvents: booking.status === 'Completed' ? 'none' : 'auto',
                                             }}>
                                             <Card.Header as="h5">  {booking.tripMode}, <span >{acceptedAtFormatted}</span>  <span style={{ float: "right" }}>{booking.city}</span> </Card.Header>
                                             <Card.Body>
                                                 <Card.Title>Username: {booking.username}</Card.Title>
+                                                <Card.Title>Phoneno: {booking.email}</Card.Title>
                                                 <Card.Title>Pickup Location: {booking.pickupLocation}</Card.Title>
+                                                <div className='col-2 '>
+                      <img src="https://img.freepik.com/premium-vector/route-vector-icon-route-destination-with-map-pin-doted-line-vector-illustration-eps-10_532800-355.jpg" alt="" style={{width:"100%"}} />
+                      </div>
                                                 <Card.Title>Destination Location: {booking.destinationLocation}</Card.Title>
                                                 {booking.date && booking.time && (
                                                     <div>
@@ -178,13 +190,14 @@ function DriverBookings() {
                         </div>
                     </center>
                 </div>
-                <div className="col-3 rounded shadow p-4 mt-5" style={{height:"250px"}}>
+
+                <div className="col-8 col-md-3 container rounded shadow p-4 mt-5 mb-5" style={{height:"250px", backgroundColor:"white", color:"black"}}>
                    <center>
                    <h4 className='fw-bold'>payments</h4>
 
-                   <h5 className='mt-5'>pending: ₹{payments}</h5>
+                   <h5 className='mt-5 fw-bold'>pending: ₹{payments}</h5>
                                 <br />
-                   <button className='btn btn-primary'>Pay</button>
+                   <button className='btn btn-dark'>Pay</button>
                    </center>
                 </div>
             </div>

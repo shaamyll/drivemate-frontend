@@ -158,24 +158,27 @@ function UserDashboard() {
   return (
     <>
       <Header />
-      <div
+      <div className='row'
         style={{
           paddingTop: "80px",
           paddingBottom: "100px",
-          backgroundImage:
-            "url('https://static.vecteezy.com/system/resources/thumbnails/048/162/293/small/red-pin-on-a-city-map-photo.jpg')",
-          backgroundSize: "cover"
+        color:"white",
+          backgroundColor:"#141414"
         }}
       >
-        <h2 className="ms-5 mt-4">Welcome {username}</h2>
+
+{/* backgroundImage:
+            "url('https://static.vecteezy.com/system/resources/thumbnails/048/162/293/small/red-pin-on-a-city-map-photo.jpg')",
+          backgroundSize: "cover", */}
+        <h2 className="ms-5 mt-2">Welcome {username}</h2>
         <center>
-          <h3 className="mb-3 mt-5">Book Driver Online</h3>
+          <h3 className="mb-3 mt-2">Book Driver Online</h3>
         </center>
 
         <center>
           <div
-            className="rounded shadow ms-lg-4 ms-md-3 p-4"
-            style={{ width: "500px", backgroundColor: "white" }}
+            className="col-12 col-md-4 rounded shadow ms-lg-4 ms-md-3 p-4"
+            style={{ backgroundColor: "white" }}
           >
             <div className="col-12 col-md-12 selector-container">
 
@@ -200,7 +203,7 @@ function UserDashboard() {
             </div>
 
             <div className="col-12 col-md-12">
-              <label htmlFor="" className="mt-4" style={{ float: "left" }}>
+              <label htmlFor="" className="mt-" style={{ float: "left" }}>
                 Choose Location?
               </label>
               <input
@@ -225,7 +228,7 @@ function UserDashboard() {
 
               <label
                 htmlFor=""
-                className="mt-3"
+                className="mt-"
                 style={{ marginRight: "380px" }}
               >
                 City?
@@ -241,12 +244,12 @@ function UserDashboard() {
                 <option value="Trivandrum">Trivandrum</option>
               </Form.Select>
 
-              <label htmlFor="" className="mt-2" style={{ float: "left" }}>
+              <label htmlFor="" className="mt-" style={{ float: "left" }}>
                 When is driver needed?
               </label>
               <Form.Select
                 aria-label="Default select example"
-                className="mt-2"
+                className="mt-"
                 value={driverNeeded}
                 onChange={handleDriverNeededChange}
               >
@@ -255,21 +258,21 @@ function UserDashboard() {
               </Form.Select>
 
               {driverNeeded === "Schedule for Later" && (
-                <div className="mt-2">
+                <div className="mt-">
                   <label htmlFor="date" style={{ float: "left" }}>
                     Select Date:
                   </label>
                   <input
                     type="date"
                     id="date"
-                    className="form-control rounded shadow mt-2"
+                    className="form-control rounded shadow mt-"
                     placeholder="Select Date"
                     value={bookingDetails.date}
                     onChange={(e) => handleChange("date", e.target.value)}
                   />
                   <label
                     htmlFor="time"
-                    className="mt-2"
+                    className="mt-"
                     style={{ float: "left" }}
                   >
                     Select Time:
@@ -277,7 +280,7 @@ function UserDashboard() {
                   <input
                     type="time"
                     id="time"
-                    className="form-control rounded shadow mt-2"
+                    className="form-control rounded shadow mt-"
                     placeholder="Select Time"
                     value={bookingDetails.time}
                     onChange={(e) => handleChange("time", e.target.value)}
@@ -285,12 +288,12 @@ function UserDashboard() {
                 </div>
               )}
 
-              <label htmlFor="time" className="mt-2" style={{ float: "left" }}>
+              <label htmlFor="time" className="mt-" style={{ float: "left" }}>
                 Select Package Hours
               </label>
               <Form.Select
                 aria-label="Default select example"
-                className="mt-2"
+                className="mt-"
                 value={bookingDetails.packageHours}
                 onChange={handlePackageChange}
               >
@@ -304,7 +307,7 @@ function UserDashboard() {
 
               <label
                 htmlFor=""
-                className="mt-2"
+                className="mt-"
                 style={{ marginRight: "350px" }}
               >
                 Car Type?
@@ -313,7 +316,7 @@ function UserDashboard() {
               <div className="d-flex align-items-center">
                 <Form.Select
                   aria-label="Default select example"
-                  className="mt-2 w-50"
+                  className="mt- w-50"
                   value={bookingDetails.carType}
                   onChange={(e) => handleChange("carType", e.target.value)}
                 >
@@ -333,7 +336,7 @@ function UserDashboard() {
                 </Form.Select>
               </div>
 
-              <h2 className="mt-4 fw-bold">
+              <h2 className="mt-4 fw-bold" style={{color:"BLACK"}}>
                 <FaIndianRupeeSign className="fs-3" />
                 {amount}
               </h2>

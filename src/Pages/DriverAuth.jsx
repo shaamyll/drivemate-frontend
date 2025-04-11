@@ -182,9 +182,9 @@ function DriverAuth({ driverregister }) {
   return (
     <div style={{ height: "750px", border:"1px solid black"}}>
       <Header/>
-      <div className="col-5 p-4 container rounded shadow " style={{ height: "auto", marginTop:"150px"}}>
+      <div className="col-12 col-md-4 p-4 container rounded shadow " style={{ height: "auto", marginTop:"120px", backgroundColor:"#141414", color:"white"}}>
         <center>
-          <h3> DRIVER {
+          <h3 className='mt-3 mb-3'> DRIVER {
             driverregister ? "REGISTER" : "LOGIN"
           }
           </h3>
@@ -202,7 +202,7 @@ function DriverAuth({ driverregister }) {
 
           {
             driverregister &&
-            <label htmlFor="" style={{ marginRight: "320px" }}>Select City</label>
+            <label htmlFor="" style={{ marginRight: "270px" }}>Select City</label>
           }
 
           {

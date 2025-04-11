@@ -43,63 +43,54 @@ const Sidebar = () => {
   },[])
 
   return (
-    <div className="d-flex " style={{height:"100vh"}}>
+    <div className="row  d-flex "   style={{
+      width:"100%",
+      backgroundColor: "#141414", // Updated color
+      padding: "20px",
+      color: "white", 
+  
+    }}>
     
 
-     <Card
-          className="shadow-xl"
-          style={{
-            width: "250px",
-            backgroundColor: "#343a40",
-            padding: "20px",
-             // Ensure sidebar takes full height of the viewport
-            height:"100%",
-            color: "black",
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
-          }}
-  
-        >
-          <div className="mb-2">
-            <Typography variant="h5" color="blue-gray" style={{ fontSize: "22px", marginBottom: "20px", color:"black"}}>
-              {fullName}
-            </Typography>
+
+
+          <div className="mb-4 " style={{color:"white"}}>
+        
+            <h5>   {fullName}</h5>
+      
           </div>
 
-          <List style={{ listStyle: "none", padding: "0" }}>
+          <ul style={{ listStyle: "none", padding: "0" }}>
            
            <Link to='/driverDashboard'>
-           <ListItem
+           <li
               style={{
                 borderBottom: "1px solid #ccc",
                 padding: "10px",
                 display: "flex",
                 alignItems: "center",
-                color:"black"
+                color:"white"
               }}
             >
-              <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" style={{ fontSize: "20px" }} />
-              </ListItemPrefix>
+            
               Dashboard
-            </ListItem>
+            </li>
            </Link>
 
             
               <Link to={'/driverBookings'}>
-              <ListItem
+              <li
               style={{
                 borderBottom: "1px solid #ccc",
                 padding: "10px",
                 display: "flex",
                 alignItems: "center",
-                color:"black"
+                color:"white"
               }}
             >
-              <ListItemPrefix>
-                <ShoppingBagIcon className="h-5 w-5" style={{ fontSize: "20px" }} />
-              </ListItemPrefix>
+          
               Bookings
-            </ListItem>
+            </li>
 
               </Link>
 
@@ -123,7 +114,7 @@ const Sidebar = () => {
               </Link> */}
 
             
-           <ListItem 
+           <li 
            onClick={handleDriverLogout}
               style={{
                 padding: "10px",
@@ -135,11 +126,11 @@ const Sidebar = () => {
                 <PowerIcon className="h-5 w-5" style={{ fontSize: "20px" }} />
               </ListItemPrefix>
               Log Out
-            </ListItem>
+            </li>
          
 
-          </List>
-        </Card>
+          </ul>
+      
 
     </div>
   );

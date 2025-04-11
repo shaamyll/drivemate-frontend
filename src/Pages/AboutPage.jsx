@@ -6,7 +6,7 @@ function AboutPage() {
   return (
     <>
     <Header/> 
-    <div style={{paddingTop:"100px"}}>  
+    <div style={{paddingTop:"50px"}}>  
     
         <About/>
     </div>

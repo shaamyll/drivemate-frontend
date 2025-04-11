@@ -14,16 +14,42 @@ h3 {
     text-align: center;
 }
 
-
+/* 
 #about{
     background-image: url('./Img/violet.png');
     background-size: cover;
     background-position: left;
-}
+} */
+
+
+/* 
 #car{
     transition: transform 3s ease;
-    transform: translate(0)
+    transform: translate(0);
+    animation: 4s linear 0s infinite alternate animating-multiple-properties;
 }
 #car:hover{
     transform: translateX(500px)
 }
+ */
+
+
+ @keyframes slideAndBounce {
+    0% {
+      transform: translateX(-100%);
+    }
+    60% {
+      transform: translateX(20px);
+    }
+
+ 
+  }
+
+
+  
+  #car {
+    animation: slideAndBounce 2s ease-in-out;
+    animation-duration: 6s;
+  }
+
+

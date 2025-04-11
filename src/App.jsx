@@ -17,6 +17,7 @@ import AdminDrivers from './Pages/AdminDrivers';
 import RequestDriver from './Pages/RequestDriver';
 import AdminDriverRequests from './Pages/AdminDriverRequests';
 import DriverPayment from './Pages/DriverPayment';
+import Services from './Pages/Services';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Route path='/requestDriver' element={<RequestDriver/>}/>
       <Route path='/AdminDriverReuests' element={<AdminDriverRequests/>}/>
       <Route path='/driverPayment' element={<DriverPayment/>} />
+      <Route path='/services' element={<Services/>}/>
     </Routes>
     
     <Footer/>

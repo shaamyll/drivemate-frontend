@@ -3,6 +3,7 @@ import Header from '../Components/Header';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { cancelBookingAPI, getUserBookingsAPI } from '../services/allAPIs';
+import Swal from 'sweetalert2'
 
 function RequestDriver() {
   const [acceptedBookings, setAcceptedBookings] = useState([]);
@@ -30,7 +31,11 @@ function RequestDriver() {
     try {
       const response = await cancelBookingAPI(bookingId);
       console.log(response); // Debug message
-      alert(response.data.message)
+      Swal.fire({
+        title: response.data.message,
+        icon: "error",
+        draggable: true
+      });
 
       // Remove the cancelled booking from the state
       setAcceptedBookings((prevBookings) =>
@@ -50,7 +55,7 @@ function RequestDriver() {
   }, []);
 
   return (
-    <>
+    <div style={{backgroundColor:"#141414", color:"white", paddingBottom:"70px"}}>
       <Header />
       <div style={{ paddingTop: '80px' }}>
         {/* <h5 className="mt-4 ms-4 text-success">
@@ -70,7 +75,7 @@ function RequestDriver() {
                <Card
                 className="rounded shadow mb-4"
                 key={index}
-                style={{
+                style={{ color:"black", backgroundColor:"white",
                   opacity: ['Completed', 'Cancelled'].includes(booking.status) ? 0.6 : 1,
 
                 }}
@@ -148,7 +153,7 @@ function RequestDriver() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
