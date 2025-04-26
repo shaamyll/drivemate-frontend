@@ -96,3 +96,13 @@ export const getBookingsByUserAPI = async (userId) => {
     return await commonAPI('patch',`${serverUrl}/api/drivers/updateStatus/${driverId}`,status)
   };
 
+
+
+  export const createRazorpayOrder = async(reqBody)=>{
+    return await commonAPI('post',`${serverUrl}/api/paymentOrder`,reqBody)
+  }
+
+
+  export const verifyPayment = async(reqBody)=>{
+    return await commonAPI('post',`${serverUrl}/api/paymentOrder/verify`,reqBody)
+  }

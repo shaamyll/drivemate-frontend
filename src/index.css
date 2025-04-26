@@ -88,3 +88,14 @@
   .custom-modal-width .modal-body {
     padding: 20px; /* Optional: Customize padding for better appearance */
   }
+
+
+  #userlogin{
+    width: 50%;
+  }
+
+  @media (max-width:768px) {
+    #userlogin{
+      width: 100%;
+    }
+  }

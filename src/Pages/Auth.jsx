@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '../Components/Header';
 import Swal from 'sweetalert2'
 
+
 function Auth({ register }) {
 
   const navigate = useNavigate()
@@ -264,7 +265,7 @@ function Auth({ register }) {
 
         
         else {
-          toast.warn(response.response.data, {
+          toast.warn("Payment Successfull", {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -302,19 +303,18 @@ function Auth({ register }) {
    
 
     <center>
-    <div className="row w-50 w-md-50  container rounded shadow" style={{   display:"flex", justifyContent:"center",   marginBottom:"100px", height:"430px", backgroundColor:"#141414", color:"white"}}>
+    <div id='userlogin' className="row shadow-lg  text-white " style={{   display:"flex", justifyContent:"center",   marginBottom:"100px", height:"430px", backgroundColor:"#141414", color:"white"}}>
 
-<div id='userLogin' className="col-10 col-md-5 mt-4  shadow" style={{  height:"380px"}}>
+<div id='userLogin' className="col-12 col-md-6 d-none d-md-flex" style={{  height:"430px"}}>
  
-
 
 </div>
 
 
 
-<div className=" col-12  col-md-6  p-5   " >
+<div className="col-12 col-md-6  p-3" >
   <center>
-    <h4 style={{ fontWeight: "bold" }}>USER {
+    <h4 className='mt-4' style={{ fontWeight: "bold" }}>USER {
       register ? "REGISTER" : "LOGIN"
     }
     </h4>
@@ -324,7 +324,7 @@ function Auth({ register }) {
 
     
     }
-<div className="mb-3 mt-4">
+ {/* className="col-12 col-md-12   mb-3 mt-4"> */}
   <input
     onChange={e => setUserDetails({ ...userDetails, email: e.target.value })}
     type="number"
@@ -334,7 +334,7 @@ function Auth({ register }) {
   <div style={{ minHeight: "20px" }}>
     {errors.email && <small className="text-danger">*{errors.email}</small>}
   </div>
-</div>
+{/* </> */}
 
 
   {
