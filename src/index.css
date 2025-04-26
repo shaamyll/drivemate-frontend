@@ -94,8 +94,27 @@
     width: 50%;
   }
 
+
+  #professional .col-12{
+    background-color: #141414;
+  }
+
+  #professional .col-12:hover{
+    background-color: white;
+    color: black;
+  }
+
+
   @media (max-width:768px) {
     #userlogin{
       width: 100%;
+    }
+
+    #location h3{
+      font-size: medium;
+    }
+
+    #location .col-12{
+      margin-bottom: 30px;
     }
   }

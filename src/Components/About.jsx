@@ -27,19 +27,19 @@ function About() {
 
                     <center>
 
-                        <div className="row container  mt-5 mb-5" style={{ fontWeight: "bolder", textAlign: "justify", justifyContent: "space-around", color:"white"}}>
+                        <div id='professional' className="row container  mt-5 mb-5" style={{ fontWeight: "bolder", textAlign: "justify", justifyContent: "space-around", color:"white"}}>
 
-                            <div className="col-12 col-md-2 p-5 mb-4    rounded shadow  " style={{ backgroundColor: "#141414" }}>
+                            <div className="col-12 col-md-2 p-5 mb-4    rounded shadow  " >
                                 <h3 className='fw-bold'>2000+ <br />
                                     Verified Drivers..
                                 </h3>
                             </div>
-                            <div className="col-12 col-md-2 p-5 mb-4  rounded shadow " style={{ backgroundColor: "#141414" }}>
+                            <div className="col-12 col-md-2 p-5 mb-4  rounded shadow " >
                                 <h3 className='fw-bold'>1 LAC+ <br />
                                     Happy Clients
                                 </h3>
                             </div>
-                            <div className="col-12 col-md-2 p-5 mb-4  rounded shadow " style={{ backgroundColor: "#141414" }}>
+                            <div className="col-12 col-md-2 p-5 mb-4  rounded shadow " >
                                 <h3 className='fw-bold'>24 hrs <br />
                                     Service
                                 </h3>
@@ -66,22 +66,24 @@ function About() {
 
                     <center>
 
-                        <div className="row container w-50 mt-5 mb-5" style={{ fontWeight: "bolder", textAlign: "justify", justifyContent: "space-around" }}>
+                        <div id='location' className="row container  mt-5 mb-5" style={{ fontWeight: "bolder"}}>
 
-                            <div className="col-12 col-md-4 pt-5   "  style={{color:"#141414"}}>
+                            <div className="col-12 col-md-4 pt-5 "  style={{color:"#141414"}}>
                                 <h3 className='fw-bold'><FaMapLocationDot className='fs-1 mb-3 text-dark' /><br />
                                     COCHIN
                                 </h3>
                             </div>
-                            <div className="col-12 col-md-4 pt-5 ">
+                            <div className="col-12 col-md-4 pt-5">
                                 <h3 className='fw-bold'><FaMapLocationDot className='fs-1 mb-3 text-dark' /><br />
-                                    CALICUT
+                                  
                                 </h3>
+                                <h3 className='text-center'>  CALICUT</h3>
                             </div>
-                            <div className="col-12 col-md-4 pt-5 ms-md-3">
-                                <h3 className='fw-bold  '><FaMapLocationDot className='fs-1 mb-3 text-dark' /><br />
-                                    <span className='fw-bold' style={{ marginLeft: "-10px" }}>TRIVANDRUM</span>
+                            <div className="col-12 col-md-4 pt-5 ">
+                                <h3 className='fw-bold '><FaMapLocationDot className='fs-1 mb-3 text-dark' />
                                 </h3>
+                                <h3 className='fw-bold text-center' >TRIVANDRUM</h3>
+
                             </div>
 
                         </div>
@@ -94,7 +96,7 @@ function About() {
 
 
 
-
+{/* 
                 <div className="row  mt-5 pb-5 p-3 mb-4" style={{ height: "400px", display: "flex", justifyContent: "space-evenly" }}>
                     <h3 className='mb-5'>Our Happy Clients</h3>
 
@@ -106,7 +108,7 @@ function About() {
                         <p className='fs-4'><FaUserCircle className='fs-1' />Faheem</p>
                         <p>"Very good person comes on time very good nature neat and clean driving is very good if i want to give stars 10 on 10 i will give want like this driver"</p>
                     </div>
-                </div>
+                </div> */}
 
 
 

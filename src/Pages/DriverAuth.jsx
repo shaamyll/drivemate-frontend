@@ -234,11 +234,11 @@ function DriverAuth({ driverregister }) {
 
           {
             driverregister ?
-              <button onClick={handleDriverRegister} className='btn btn-primary mb-5'>Register </button>
+              <button onClick={handleDriverRegister} className=' btn-primary mb-5'>Register </button>
               :
               <button onClick={handleDriverLogin} className='btn btn-primary mb-5'> Login </button>
           }
-
+                                
 
           {
             driverregister ?
